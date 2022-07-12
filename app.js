@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const blogs = require('./model/data');
-
+// testing the push of code from vs code
 const app = express();
 
 //----------------------------------------- connecting to the database ------------------------------------------------------
