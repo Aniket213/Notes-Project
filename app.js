@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const blogs = require('./model/data');
-const ani = 0;
+
 const app = express();
 
 //----------------------------------------- connecting to the database ------------------------------------------------------
