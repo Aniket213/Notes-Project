@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./parts/head.ejs') %>
+<body>
+
+    <%- include('./parts/nav.ejs') %>
+    <div class="index-container">
+        <div class="indexballone"></div>
+        <div class="indexballtwo"></div>
+        <div class="indexballthree"></div>
+        <div class="indexballfour"></div>
+        <main class="allblogs">
+            <% if(blogs.length!=0){
+                blogs.forEach((blog)=>{ %>
+                    <a class="card" href="/<%= blog._id %>">
+                        <h2 class="title"><%= blog.title %></h2>
+                        <p class="desc"><%= blog.desc %></p>
+                    </a>
+            <% })
+            }
+            else{  %>
+                <p>It seems like no notes available</p>
+        <%  } %>
+        </main>
+    </div>
+
+    
+
+    <%- include('./parts/footer.ejs') %>
+
+</body>
+</html>

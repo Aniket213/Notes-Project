@@ -1,0 +1,615 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Indie+Flower&family=Montserrat:wght@400;500;600;700&family=Rock+Salt&display=swap');
+
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    position: relative;
+}
+
+/* ------------------------------------- nav bar ------------------------------------------- */
+
+nav{
+    border-bottom: 0.01px solid rgba(255, 37, 37, 0.158);
+    padding: 1.5rem 2rem 1.5rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 2px 2px 4px rgba(130, 130, 130, 0.233);
+    z-index: 2;
+    background-color: white;
+}
+
+.logo{
+    font-family: 'Rock Salt', cursive;
+}
+
+.logo img{
+    width: 50px;
+    position: absolute;
+}
+
+.logo img:hover{
+    animation: logo 0.9s 0s infinite ease-in-out;
+}
+
+@keyframes logo{
+    0%{
+        transform: rotate(-45deg);
+    }
+    50%{
+        transform: rotate(45deg);
+    }
+    100%{
+        transform: rotate(-45deg);
+    }
+
+}
+
+.logo span{
+    padding-left: 3.7rem;
+}
+
+.right-nav{
+    font-size: 1.2rem;
+    padding: 1rem 3rem 0 1rem;
+}
+
+.right-nav a{
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    color: black;
+    font-weight: 500;
+    margin-right: 8rem;
+    transition: all 0.3s;
+}
+
+.right-nav a:hover{
+    color: darkred;
+    text-shadow: 2px 2px 2px rgba(134, 134, 134, 0.2);
+    animation: pulse 1s;
+    box-shadow: 0 0 0 1em transparent;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 red; }
+  }
+
+/* ------------------------------------- all blogs ------------------------------------------- */
+
+.allblogs{
+    width: 800px;
+    margin: 7rem auto;
+}
+
+.card{
+    display: block;
+    width: 800px;
+    position: relative;
+    border-left: 4px solid red;
+    margin-bottom: 2.5rem;
+    padding: 0.5rem 0.5rem 0.9rem 1.5rem;
+    text-decoration: none;
+    color: #000;
+}
+
+.card::after{
+    content: "";
+    width: 0px;
+    height: 4px;
+    background-color: red;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width 0.5s;
+}
+
+.card:hover::after{
+    width: 780px;
+}
+
+.title{
+    margin-bottom: 0.7rem;
+    color: #222;
+}
+
+.desc{
+    font-weight: 500;
+    color: #333;
+}
+
+/* adding ball background */
+
+.index-container{
+    position: relative;
+    border-top: 0.1px solid rgba(255, 255, 255, 0);
+    overflow: hidden;
+}
+
+.indexballone{
+    width: 800px;
+    height: 800px;
+    border-radius: 50%;
+    position: absolute;
+    background-color: rgb(255, 243, 243);
+    background-color: whitesmoke;
+    top: -30%;
+    left: -40%;
+    z-index: -1;
+}
+
+.indexballtwo{
+    width: 700px;
+    height: 700px;
+    border-radius: 50%;
+    position: absolute;
+    background-color: whitesmoke;
+    bottom: -30%;
+    right: -30%;
+    z-index: -1;
+}
+
+.indexballthree{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    position: absolute;
+    top: 6%;
+    left: 15%;
+    z-index: 1;
+    box-shadow: inset -3px -5px 30px rgba(0, 0, 0, 0.1);
+    background-image: radial-gradient(circle at top left, white, rgba(255, 0, 0, 0.803));
+    transition: all 3s;
+}
+
+.indexballthree:hover{
+    transform: scale(3);
+    opacity: 0.2;
+}
+
+.indexballfour{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    position: absolute;
+    background-color: rgb(230, 228, 255);
+    top: 42%;
+    right: 6%;
+    z-index: 1;
+    box-shadow: inset -3px -5px 30px rgba(0, 0, 0, 0.15);
+    background-image: radial-gradient(circle at top left, white, rgba(62, 168, 255, 0.748));
+    transition: all 5s;
+}
+
+.indexballfour:hover{
+    transform: scale(5);
+    opacity: 0;
+}
+
+/* ------------------------------------- add new blog ------------------------------------------- */
+
+.create-container{
+    padding-top: 12rem;
+    width: 100vw;
+    height: 86.3vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.create{
+    position: relative;
+    width: 550px;
+    margin: auto;
+    text-align: center;
+    border-radius: 10px;
+    background-color: transparent;
+}
+
+.createwrapper{
+    padding: 2rem 1rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(117, 117, 117, 0.186);
+    /* border: 2px solid red; */
+    background-color: rgba(255, 255, 255, 0.577);
+    backdrop-filter: blur(10px);
+}
+
+.create h1{
+    margin-bottom: 0.5rem;
+}
+
+.create input{
+    display: inline-block;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #333;
+    padding: 3rem 0.3rem 0.3rem 0.3rem;
+    width: 90%;
+    font-size: 1rem;
+    background-color: transparent;
+}
+
+.create input::placeholder{
+    transition: all 0.4s;
+}
+
+.create input:hover::placeholder{
+    transform: translateY(-20px);
+    color: crimson;
+}
+
+.create input:focus::placeholder{
+    color: transparent;
+}
+
+.create input:hover{
+    border-bottom: 2px solid crimson;
+}
+
+.create button{
+    position: relative;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.4rem 1.5rem;
+    margin-top: 3rem;
+    width: 60%;
+    background-color: transparent;
+    outline: none;
+    font-family: 'Montserrat', sans-serif;
+    color: red;
+    cursor: pointer;
+    transition: all 0.4s;
+    overflow: hidden;
+}
+
+.create button::before{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: -0.2px;
+    background: linear-gradient(120deg, transparent, transparent, rgba(255, 0, 0, 0.686), transparent, transparent);
+    transform: translateX(-50%);
+    transition: all 0.8s;
+}
+
+.create button:hover{
+    border: 2px solid red;
+    box-shadow: 0 0 15px 8px rgba(255, 0, 0, 0.43);
+}
+
+.create button:hover::before{
+    transform: translateX(50%);
+}
+
+/* ------- balls at the backgound ------- */
+
+.ball{
+    position: absolute;
+}
+
+.one{
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    /* background-color: rgba(255, 0, 0, 0.81); */
+    top: 0px;
+    left: -140px;
+    z-index: -1;
+    box-shadow: inset -25px -15px 40px rgba(0,0,0,.35);
+    /* background-image: linear-gradient(-45deg, rgba(255,255,220,.3) 0%, transparent 100%); */
+    background-image: radial-gradient(circle at top left, rgb(255, 220, 216), red);
+}
+
+.two{
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+    /* background-color: rgba(0, 128, 0, 0.805); */
+    top: -110px;
+    left: -60px;
+    z-index: -1;
+    box-shadow: inset -30px -19px 50px rgba(0,0,0,.35);
+    /* background-image: linear-gradient(-45deg, rgba(255,255,220,.3) 0%, transparent 100%); */
+    background-image: radial-gradient(circle at top left, rgb(200, 255, 191), green);
+}
+
+.three{
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    /* background-color: rgba(0, 0, 255, 0.805); */
+    top: 90px;
+    left: -40px;
+    z-index: -1;
+    box-shadow: inset -25px -15px 40px rgba(0,0,0,.3);
+    /* background-image: linear-gradient(-45deg, rgba(255,255,220,.3) 0%, transparent 100%); */
+    background-image: radial-gradient(circle at top left, rgb(124, 124, 255), blue);
+}
+
+.four{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    /* background-color: rgba(255, 255, 0, 0.803); */
+    top: -50px;
+    left: -260px;
+    z-index: -2;
+    box-shadow: inset -25px -15px 40px rgba(0,0,0,.3);
+    /* background-image: linear-gradient(-45deg, rgba(255,255,220,.3) 0%, transparent 100%); */
+    background-image: radial-gradient(circle at top left, rgb(255, 255, 192), yellow);
+
+}
+
+.five{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    /* background-color: rgba(128, 0, 128, 0.797); */
+    top: 150px;
+    left: -250px;
+    z-index: -2;
+    box-shadow: inset -15px -5px 25px rgba(0,0,0,.3);
+    /* background-image: linear-gradient(-45deg, rgba(255,255,220,.3) 0%, transparent 100%); */
+    background-image: radial-gradient(circle at top left, rgb(255, 169, 255), purple);
+
+}
+
+/* .six{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: rgb(49, 145, 231); 
+    top: 280px;
+    left: -200px;
+    z-index: -2;
+    box-shadow: inset -25px -15px 40px rgba(0,0,0,.3);
+    background-image: linear-gradient(-45deg, rgba(255,255,220,.3) 0%, transparent 100%);
+} */
+
+.bigball{
+    width: 700px;
+    height: 700px;
+    /* background-color: rgba(255, 0, 0, 0.721); */
+    position: absolute;
+    border-radius: 50%;
+    bottom: -50%;
+    right: -30%;
+    background-image: radial-gradient(circle at top left , white, rgb(255, 0, 0));
+    transition: all 5s;
+}
+
+.bigball:hover{
+    transform: scale(5.2);
+    opacity: 0;
+}
+
+/* -------------------------------------- details ------------------------------------------- */
+
+.detailsbox{
+    position: relative;
+    height: 86.3vh;
+    overflow: hidden;
+    border: 0.1px solid rgba(255, 255, 255, 0);
+}
+
+.detailscontainer{
+    position: relative;
+    width: 900px;
+    margin: 13rem auto;
+    padding: 1rem;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.16);
+    transition: all 0.5s;
+}
+
+.detailscontainer:hover{
+    transform: scale(1.2);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.16);
+}
+
+.detailscard{
+    width: 800px;
+    padding: 1rem;
+}
+
+.delete{
+    position: absolute;
+    display: inline-block;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    text-decoration: none;
+    color: #000;
+    font-size: 1.3rem;
+    transition: all 0.3s;
+}
+
+.delete:hover{
+    font-size: 1.7rem;
+    color: crimson;
+}
+
+/* balls animation for background */
+
+.detailsballone{
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    border-radius: 50%;
+    background-color: rgba(245, 245, 245);
+    top: 0%;
+    left: -120%;
+    transition: all 1s;
+    z-index: -1;
+}
+
+.detailscontainer:hover > .detailsballone{
+    top: -30%;
+    left: -30%;
+}
+
+.detailsballtwo{
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    border-radius: 50%;
+    background-color: rgba(245, 245, 245);
+    top: -480%;
+    right: -120%;
+    transition: all 0.8s;
+    z-index: -1;
+}
+
+.detailscontainer:hover > .detailsballtwo{
+    top: -380%;
+    right: -75%;
+}
+
+.detailsballthree{
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    top: -300%;
+    left: 10%;
+    transition: all 1s;
+    background-image: radial-gradient(circle at top left, white, rgba(255, 0, 0, 0.803));
+    transition: all 2s;
+}
+
+.detailsballthree:hover{
+    transform: rotate(360deg);
+}
+
+.detailscontainer:hover > .detailsballthree{
+    top: -100%;
+    left: 10%;
+}
+
+.detailsballfour{
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    bottom: -390%;
+    right: 0%;
+    transition: all 1s;
+    background-image: radial-gradient(circle at top left, white, rgba(62, 168, 255, 0.748));
+    transition: all 2s;
+}
+
+.detailsballfour:hover{
+    transform: rotate(360deg);
+}
+
+.detailscontainer:hover > .detailsballfour{
+    bottom: -70%;
+    right: 0%;
+}
+
+/* ----------------------------- About ---------------------------------------------- */
+
+.aboutcontainer{
+    border: 1px solid rgba(0, 0, 0, 0);
+    height: 86vh;
+}
+
+#canvas{
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    background-color: snow;
+    /* overflow: hidden; */
+    /* border: 2px solid yellow; */
+    width: 98.8vw;
+}
+
+.aboutcontent{
+    /* border: 4px solid red; */
+    width: 900px;
+    margin: 10rem auto;
+    padding: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.893);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.177);
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+}
+
+.aboutheading{
+    border-bottom: 4px solid red;
+    padding-bottom: 0.3rem;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+.aboutpara{
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+
+.profiles{
+    /* border: 2px solid black; */
+    width: 700px;
+    margin: auto;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.profiles p{
+    width: 300px;
+    /* border: 1px solid red; */
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+}
+
+.profiles p a{
+    text-decoration: none;
+    color: black;
+}
+
+.ticks{
+    color: red;
+    font-size: 1.2rem;
+    display: inline-block;
+    padding-right: 0.7rem;
+}
+
+.tp{
+    padding: 0.7rem 1rem;
+    margin-top: 1.2rem;
+    font-weight: 500;
+    color: white;
+    background-image: linear-gradient(90deg, red, salmon);
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.168);
+}
+
+.tpp{
+    padding: 0.5rem;
+}
+
+.tpbtn{
+    border: 3px solid white;
+    padding: 0.5rem 2rem;
+    transition: all 0.4s;
+}
+
+.tpbtn:hover{
+    box-shadow: inset 11em 0 0 0 red;
+}
+
+
+
+
+
+
+

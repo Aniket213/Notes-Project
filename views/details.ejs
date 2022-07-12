@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./parts/head.ejs') %>
+<body>
+
+    <%- include('./parts/nav.ejs') %>
+
+    <div class="detailsbox">
+        <section class="detailscontainer">
+            <div class="detailsballone"></div>
+            <div class="detailsballtwo"></div>
+            <div class="detailsballthree"></div>
+            <div class="detailsballfour"></div>
+            <div class="detailscard">
+                <h1 class="title"><%= blog.title%></h1>
+                <p class="desc detailsdesc"><%= blog.desc%></p>
+                <a href="" class="delete" data-doc="<%= blog._id%>" ><i class="fa-solid fa-trash"></i></a>
+            </div>
+        </section>
+    </div>
+
+
+    <%- include('./parts/footer.ejs') %>
+
+    <script>
+        const trash = document.querySelector(".delete");
+        trash.addEventListener('click', (e)=>{
+            const endpoint = `/${trash.dataset.doc}`;
+            fetch(endpoint, {
+                method : 'DELETE'
+            })
+            .then((result) => result.json())
+            .then((data) => window.location.href = data.redirect )
+            .catch((err) => console.log(err))
+        })
+    </script>
+
+</body>
+</html>

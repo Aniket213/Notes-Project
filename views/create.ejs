@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./parts/head.ejs') %>
+<body>
+
+    <%- include('./parts/nav.ejs') %>
+
+    <div class="create-container">
+        <div class="bigball"></div>
+        <form class="create" action="/" method="POST" autocomplete="off">
+            <div class="one ball"></div>
+            <div class="two ball"></div>
+            <div class="three ball"></div>
+            <div class="four ball"></div>
+            <div class="five ball"></div>
+            <div class="six ball"></div>
+            <div class="createwrapper">
+                <h1>Create a new note</h1>
+                <input type="text" name="title" id="title" placeholder="Title" required> <br> 
+                <input type="text" name="desc" id="desc" placeholder="Description" required>
+                <button>+ Add</button>
+            </div>
+        </form>
+    </div>
+    
+
+    <%- include('./parts/footer.ejs') %>
+
+</body>
+</html>
